@@ -1,0 +1,66 @@
+<div class="containerFormsProject" *ngIf="project">
+    <div class="imgFormProject">
+        <div class="imgFormProject-containerText">
+            <a class="nav-link active" aria-current="page" [routerLink]="['/admin']" [routerLinkActive]="['actived']">
+                <h1>Back to<br>Projects</h1>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="containerForm">
+        <h2>{{title}}</h2>
+
+        <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+            <span>
+
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" placeholder="Name" required>
+                <span class="formError" *ngIf="name.touched && !name.valid">*</span>
+            </span>
+            <span>
+
+                <textarea name="description" #description="ngModel" [(ngModel)]="project.description"
+                    placeholder="Description" required></textarea>
+                <span class="formError" *ngIf="description.touched && !description.valid">*</span>
+            </span>
+            <span>
+
+                <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category"
+                    placeholder="Category" required>
+                <span class="formError" *ngIf="category.touched && !category.valid">*</span>
+            </span>
+            <span>
+
+                <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" placeholder="Languages"
+                    required>
+                <span class="formError" *ngIf="langs.touched && !langs.valid">*</span>
+            </span>
+            <span>
+
+                <input type="text" name="repository" #repository="ngModel" [(ngModel)]="project.repository"
+                    placeholder="Link to repository" required>
+                <span class="formError" *ngIf="langs.touched && !langs.valid">*</span>
+            </span>
+            <span>
+
+                <input type="text" name="preview" #preview="ngModel" [(ngModel)]="project.preview"
+                    placeholder="Link to preview" required>
+                <span class="formError" *ngIf="langs.touched && !langs.valid">*</span>
+            </span>
+            <div class="OpenAndSubmit">
+                <div class="file">
+
+                    <label for="image">Open
+                        <fa-icon [icon]="faFolderOpen" id="iconFolder"></fa-icon>
+                    </label>
+                    <input type="file" name="image" id="image" (change)="fileChangeEvent($event)">
+                </div>
+                <span class="submitForm">
+                    <input type="submit" name="" id="" value="Submit" placeholder="Submit"
+                        [disabled]="!projectForm.form.valid" (click)="showModalSwal2success()">
+                </span>
+
+            </div>
+        </form>
+    </div>
+</div>

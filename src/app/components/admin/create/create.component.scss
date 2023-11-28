@@ -1,0 +1,211 @@
+
+/**********************************************************************************CREATE*****************************/
+
+/*global colors*/
+$backgroundColorGlobalPrimary: #ffffff;
+$backgroundColorGlobalSecundary: #f4f4f6;
+$TextColorGlobalSecundary: #acafba;
+$TextColorGlobalDarkBG: #ffffff;
+$customBlue: #655cc9;
+$errorRed: rgba(255, 0, 0, 0.705);
+
+.containerFormsProject {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+    .imgFormProject {
+      margin: 0;
+      width: 50%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("../../../../assets/media/computer.jpg");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+
+      &-containerText{
+        width: 30%;
+
+        h1 {
+          box-sizing: content-box;
+          font-weight: 300;
+          font-size: 4em;
+          color: $TextColorGlobalDarkBG;
+          text-align: center;
+          line-height: 1em;
+          border: 5px solid $backgroundColorGlobalPrimary;
+          padding: 35px;
+        }
+      }
+
+
+    }
+
+      /*FORM*/
+    .containerForm {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      /*align-items: center;*/
+      background: $backgroundColorGlobalSecundary;
+      flex-direction: column;
+      padding: 50px;
+
+      h2 {
+        font-weight: 300;
+        font-size: 50px;
+        color: #35373e;
+        margin-bottom: 20px;
+        padding-left: 15px;
+      }
+
+      form label {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+      }
+      form input[type="text"],
+      form input[type="email"],
+      form input[type="number"],
+      form textarea {
+        width: 90%;
+        margin-top: 5px;
+        padding: 15px 5px 5px 20px;
+        font-size: 1.1rem;
+        color: $TextColorGlobalSecundary;
+        border: none;
+      }
+      form textarea{
+        height: 150px;
+      }
+      form input::placeholder {
+        color: $TextColorGlobalSecundary;
+        font-size: 1.1rem;
+      }
+      form textarea::placeholder {
+        color: $TextColorGlobalSecundary;
+        font-size: 1.1rem;
+      }
+      
+      .OpenAndSubmit {
+        display: flex;
+        align-items: center;
+      }
+      .file {
+        width: 45%;
+        padding-right: 5px;
+        padding-top: 5px;
+      }
+      .file input {
+        display: none;
+      }
+      .file label {
+        font-size: 1.1rem;
+        padding: 15px 5px 5px 20px;
+        text-align: left;
+        font-family: "MavenPro-Regular";
+        background-color: $backgroundColorGlobalPrimary;
+        border: 1px solid $TextColorGlobalSecundary;
+        color: $TextColorGlobalSecundary;
+        cursor: pointer;
+      }
+      
+      #iconFolder {
+        font-size: 1.3rem;
+        text-align: end;
+        color: $TextColorGlobalSecundary;
+        margin-left: 10px;
+      }
+      .submitForm {
+        width: 45%;
+      }
+      
+      form input[type="submit"],
+      form button {
+        margin-top: 15px;
+        padding: 15px 5px 9px 20px;
+        font-size: 1.1rem;
+        text-align: left;
+        background-color: $backgroundColorGlobalPrimary;
+        border: 1px solid $TextColorGlobalSecundary;
+        color: $TextColorGlobalSecundary;
+        cursor: pointer;
+        width: 100%;
+        transition: all 400ms ease;
+      }
+      
+      form input[disabled] {
+        opacity: 0.2;
+        cursor: not-allowed;
+      }
+      form input[type="submit"]:hover {
+        color: $backgroundColorGlobalSecundary;
+        background-color: $customBlue;
+      }
+      
+      .formError {
+        color: $errorRed;
+        font-size: 2rem;
+        margin: 5px;
+      }
+      .red{
+        color: $errorRed;
+      }
+      .visibilityTransparent {
+        visibility: hidden;
+      }
+    }
+
+  }
+
+  // LAPTOP
+
+  @media (max-width: 1550px){
+    .containerFormsProject{
+      height: 90vh;
+      .imgFormProject{
+        &-containerText{
+          width: 30%;
+            h1{
+              font-size: 3em;
+          }
+        
+        }
+
+      }
+
+      .containerForm {
+        h2 {
+          font-size: 3em;
+        }
+
+        form textarea{
+          height: 120px;
+        }
+      }
+    }
+  }
+
+  // MOBILE
+  @media (max-width: 800px){
+
+    .containerFormsProject {
+      display: flex;
+      flex-direction: column;
+
+      .imgFormProject{
+        width: 100%;
+        padding: 100px 0;
+        h1{
+          font-size: 2em;
+          padding: 15px;
+        }
+      }
+
+      .containerForm{
+        width: 100%;
+      }
+    }
+
+  }

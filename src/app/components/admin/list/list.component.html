@@ -1,0 +1,52 @@
+<div class="containerListProjects">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mt-4">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" [routerLink]="['']" [routerLinkActive]="['']">Stephanie Coleur</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/admin']"
+                            [routerLinkActive]="['actived']">My Projects</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/create']" [routerLinkActive]="['actived']">New</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 containerAllCards">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex flex-wrap justify-content-between">
+                    <div class="card mb-3 mr-3 mb-3" style="width: 18rem;" *ngFor="let projects of pro">
+                        <img src="{{url+'/getImage/'+projects.image}}" class="card-img-top" alt="Project image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{projects.name}}</h5>
+                            <p class="card-text">{{projects.description}}</p>
+                        </div>
+                        <div class="buttons">
+                            <a class="btn btn-edit" [routerLink]="['/edit', projects._id]">Edit</a>
+                            <a class="btn btn-delete" (click)="deleteProject(projects._id)">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

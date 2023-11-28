@@ -1,0 +1,38 @@
+
+
+.containerListProjects{
+    .navbar{
+        padding: 10px 60px;
+    }
+
+    .containerAllCards{
+        padding: 10px 60px;
+        
+        .buttons{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 10px 10px;
+            .btn{
+                width: 49%;
+            }
+            .btn-edit{
+                color: #fff;
+                background-color: #acafba;
+            }
+            .btn-edit:hover{
+                background-color: #a1a5b0;
+            }
+            .btn-delete{
+                color: #fff;
+                background-color: #655cc9;
+                border-color: #625ac2;
+            }
+            .btn-delete:hover{
+                background-color: #5e56bc;
+            }
+
+        }
+    }
+
+}
